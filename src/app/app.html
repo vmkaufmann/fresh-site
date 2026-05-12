@@ -1,3 +1,21 @@
-<main class="home-page" aria-label="Home page with an orange tree background">
-  <h1>Fresh Site</h1>
-</main>
+<header class="top-nav">
+  <a class="brand" routerLink="/">Fresh Juice</a>
+  <nav aria-label="Main navigation">
+    <ul class="nav-list">
+      <li>
+        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+      </li>
+      <li>
+        <a routerLink="/learn-more" routerLinkActive="active">Learn More</a>
+      </li>
+      <li>
+        <a routerLink="/pricing" routerLinkActive="active">Pricing</a>
+      </li>
+      <li>
+        <a routerLink="/calendar" routerLinkActive="active">Calendar</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<router-outlet />
