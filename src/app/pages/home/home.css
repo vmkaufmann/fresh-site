@@ -12,7 +12,7 @@
   background-color: #f6b46a;
   background-image:
     linear-gradient(rgb(0 0 0 / 0%), rgb(0 0 0 / 35%)),
-    url("/orange-tree.jpg");
+    url("orange-tree.jpg");
   background-size: cover;
   background-position: center;
 }
