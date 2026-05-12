@@ -4,11 +4,15 @@
 }
 
 .pricing-page {
-  min-height: calc(100dvh - 4rem);
+  height: calc(100dvh - 4rem);
+  min-height: 0;
   background-color: #4a7c3a;
   background-image: linear-gradient(180deg, #5a8f3e 0%, #3d6b2f 100%);
   color: #fff8e8;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 .pricing-intro {
@@ -17,19 +21,27 @@
   opacity: 0.9;
 }
 
+.pricing-table-wrapper {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgb(0 0 0 / 25%);
+}
+
 .pricing-table {
   width: 100%;
   border-collapse: collapse;
   background-color: rgb(255 248 232 / 95%);
   color: #2c3e1f;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 16px rgb(0 0 0 / 25%);
 }
 
 .pricing-table thead {
   background-color: #3d6b2f;
   color: #fff8e8;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 
 .pricing-table th,
