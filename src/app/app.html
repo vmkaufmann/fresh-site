@@ -16,6 +16,18 @@
       </li>
     </ul>
   </nav>
+  <a
+    class="cart-link"
+    routerLink="/cart"
+    routerLinkActive="active"
+    aria-label="Shopping cart"
+  >
+    <span class="cart-icon" aria-hidden="true">&#x1F6D2;</span>
+    <span class="cart-label">Cart</span>
+    @if (cartCount() > 0) {
+      <span class="cart-badge" aria-label="items in cart">{{ cartCount() }}</span>
+    }
+  </a>
 </header>
 
 <router-outlet />

@@ -1,0 +1,51 @@
+<section class="page cart-page">
+  <h1>Shopping Cart</h1>
+
+  @if (count() === 0) {
+    <p class="cart-empty">Your cart is empty.</p>
+  } @else {
+    <table class="cart-table">
+      <thead>
+        <tr>
+          <th scope="col">Variety</th>
+          <th scope="col">Price / L</th>
+          <th scope="col">Quantity (L)</th>
+          <th scope="col">Subtotal</th>
+          <th scope="col"><span class="visually-hidden">Remove</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (item of items(); track item.product.name) {
+          <tr>
+            <th scope="row">{{ item.product.name }}</th>
+            <td>{{ item.product.pricePerLiter | currency }}</td>
+            <td>
+              <input
+                type="number"
+                min="1"
+                step="1"
+                [value]="item.quantity"
+                (change)="changeQuantity(item.product.name, +$any($event.target).value)"
+                [attr.aria-label]="'Quantity of ' + item.product.name"
+              />
+            </td>
+            <td>{{ item.product.pricePerLiter * item.quantity | currency }}</td>
+            <td>
+              <button type="button" class="remove-btn" (click)="remove(item.product.name)">
+                Remove
+              </button>
+            </td>
+          </tr>
+        }
+      </tbody>
+      <tfoot>
+        <tr>
+          <th scope="row" colspan="3">Total</th>
+          <td colspan="2">{{ total() | currency }}</td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <button type="button" class="clear-btn" (click)="clear()">Clear cart</button>
+  }
+</section>
