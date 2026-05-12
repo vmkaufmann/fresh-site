@@ -30,6 +30,6 @@ describe('App', () => {
     const fixture = TestBed.createComponent(App);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.top-nav .brand')?.textContent).toContain('Fresh Site');
+    expect(compiled.querySelector('.top-nav .brand')?.textContent).toContain('Fresh Juice');
   });
 });
